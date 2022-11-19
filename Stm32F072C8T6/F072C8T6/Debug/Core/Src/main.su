@@ -1,0 +1,5 @@
+main.c:65:5:main	16	static
+main.c:114:6:SystemClock_Config	112	static
+main.c:156:13:MX_GPIO_Init	48	static
+main.c:198:6:InitializeIO	8	static
+main.c:223:6:Error_Handler	8	static
