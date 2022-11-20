@@ -41,21 +41,18 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
-static const uint8_t* received_data;
-static uint8_t received_data_length;
-static uint8_t* transmit_data;
-static uint8_t transmit_data_length;
-static uint8_t heflashbuffer[32];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 void InitializeIO();
-void command_read_adc();
+//void command_read_adc();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -91,14 +88,15 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USB_DEVICE_Init();
+  MX_TIM1_Init();
+//  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   InitializeIO();
-//  uint8_t heflashbuffer[3] = {0x01, 0x02, 0x03};
-  uint8_t readData[3] = {0x00, 0x00, 0x00};
-//  DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]);
+  DAC1220_Write3Bytes(8, 0x01, 0x02, 0x03);
   HAL_Delay(25);
-  command_read_adc();
+  uint8_t readData[3] = {0x00, 0x00, 0x00};
+  DAC1220_Read3Bytes(8, &readData[1], &readData[2], &readData[3]);
+//  command_read_adc();
 
   /* USER CODE END 2 */
 
@@ -106,10 +104,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
-//	  HAL_Delay(1);
-//	  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_SET);
-//	  HAL_Delay(1);
+
+//	  HAL_GPIO_TogglePin(SCK_GPIO_Port, SCK_Pin);
+//	  delay_ns(1);
+
 //	  HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, GPIO_PIN_RESET);
 //	  HAL_Delay(1);
 //	  HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, GPIO_PIN_SET);
@@ -138,9 +136,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL2;
+  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -149,7 +151,7 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI48;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
 
@@ -164,6 +166,52 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 1-1;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 0xFFFF-1;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+
 }
 
 /**
@@ -184,14 +232,14 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, CS1_Pin|CS2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, SDIO_DAC_Pin|SCK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, MODE_SW_Pin|RANGE1_Pin|RANGE2_Pin|RANGE3_Pin
                           |RANGE4_Pin|CELL_ON_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : CS1_Pin CS2_Pin SCK_Pin */
-  GPIO_InitStruct.Pin = CS1_Pin|CS2_Pin|SCK_Pin;
+  /*Configure GPIO pins : CS1_Pin CS2_Pin SDIO_DAC_Pin SCK_Pin */
+  GPIO_InitStruct.Pin = CS1_Pin|CS2_Pin|SDIO_DAC_Pin|SCK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -218,36 +266,20 @@ static void MX_GPIO_Init(void)
 
 void InitializeIO()
 {
-
-	 HAL_GPIO_WritePin(MODE_SW_GPIO_Port, MODE_SW_Pin, GPIO_PIN_RESET); // initialize mode to potentiostatic
-	 HAL_GPIO_WritePin(CELL_ON_GPIO_Port, CELL_ON_Pin, GPIO_PIN_RESET);// initialize cell to off position
-	 HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_SET); // initialize range to range 1
-	 HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
-	 HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+	HAL_TIM_Base_Start(&htim1);
+	HAL_GPIO_WritePin(MODE_SW_GPIO_Port, MODE_SW_Pin, GPIO_PIN_RESET); // initialize mode to potentiostatic
+	HAL_GPIO_WritePin(CELL_ON_GPIO_Port, CELL_ON_Pin, GPIO_PIN_RESET);// initialize cell to off position
+	HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_SET); // initialize range to range 1
+	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
 	InitializeSPI();
 	HAL_Delay(25); // power-up delay - necessary for DAC1220
 	DAC1220_Reset();
 	HAL_Delay(25);
 	DAC1220_Init();
-	// HEFLASH_readBlock(heflashbuffer, 2, FLASH_ROWSIZE); // get dac calibration
-	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
-	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
-}
-
-void command_read_adc()
-{
-	uint8_t adc_data[6];
-	if(MCP3550_Read(adc_data))
-	{
-		transmit_data_length=6;
-		memcpy(transmit_data, adc_data, transmit_data_length);
-	}
-	else
-	{
-		const uint8_t* reply = "WAIT";
-		strcpy(transmit_data, reply);
-		transmit_data_length = strlen(reply);
-	}
+//	// HEFLASH_readBlock(heflashbuffer, 2, FLASH_ROWSIZE); // get dac calibration
+//	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
+//	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
 }
 
 /* USER CODE END 4 */

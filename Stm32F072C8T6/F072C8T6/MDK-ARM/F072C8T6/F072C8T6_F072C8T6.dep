@@ -1,1095 +1,0 @@
-Dependencies for Project 'F072C8T6', Target 'F072C8T6': (DO NOT MODIFY !)
-F (startup_stm32f072xb.s)(0x63788D29)(--cpu Cortex-M0 -g --apcs=interwork -I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "STM32F072xB SETA 1"--list startup_stm32f072xb.lst --xref -o f072c8t6\startup_stm32f072xb.o --depend f072c8t6\startup_stm32f072xb.d)
-F (../Core/Src/main.c)(0x63788D1B)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\main.o --omf_browse f072c8t6\main.crf --depend f072c8t6\main.d)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../USB_DEVICE/App/usb_device.h)(0x63788D17)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/spi_software.h)(0x63788DAA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DB3986)
-I (../Core/Inc/gpio_user.h)(0x637794A3)
-F (../Core/Src/stm32f0xx_it.c)(0x63788D19)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_it.o --omf_browse f072c8t6\stm32f0xx_it.crf --depend f072c8t6\stm32f0xx_it.d)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_it.h)(0x63788D19)
-F (../Core/Src/stm32f0xx_hal_msp.c)(0x63788D1A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_msp.o --omf_browse f072c8t6\stm32f0xx_hal_msp.crf --depend f072c8t6\stm32f0xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (..\Core\Src\gpio_user.c)(0x6377948D)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\gpio_user.o --omf_browse f072c8t6\gpio_user.crf --depend f072c8t6\gpio_user.d)
-I (../Core/Inc/gpio_user.h)(0x637794A3)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (..\Core\Src\spi_software.c)(0x63779D65)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\spi_software.o --omf_browse f072c8t6\spi_software.crf --depend f072c8t6\spi_software.d)
-I (../Core/Inc/spi_software.h)(0x63788DAA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (../Core/Inc/gpio_user.h)(0x637794A3)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../USB_DEVICE/App/usb_device.c)(0x63788D17)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usb_device.o --omf_browse f072c8t6\usb_device.crf --depend f072c8t6\usb_device.d)
-I (../USB_DEVICE/App/usb_device.h)(0x63788D17)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)
-I (../USB_DEVICE/App/usbd_desc.h)(0x63788D18)
-I (../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h)(0x6374E86B)
-I (../USB_DEVICE/App/usbd_cdc_if.h)(0x63788D18)
-F (../USB_DEVICE/App/usbd_desc.c)(0x63788D18)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usbd_desc.o --omf_browse f072c8t6\usbd_desc.crf --depend f072c8t6\usbd_desc.d)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)
-I (../USB_DEVICE/App/usbd_desc.h)(0x63788D18)
-F (../USB_DEVICE/App/usbd_cdc_if.c)(0x63788D18)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usbd_cdc_if.o --omf_browse f072c8t6\usbd_cdc_if.crf --depend f072c8t6\usbd_cdc_if.d)
-I (../USB_DEVICE/App/usbd_cdc_if.h)(0x63788D18)
-I (../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)
-F (../USB_DEVICE/Target/usbd_conf.c)(0x63788D17)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usbd_conf.o --omf_browse f072c8t6\usbd_conf.crf --depend f072c8t6\usbd_conf.d)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h)(0x6374E86B)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_ll_usb.o --omf_browse f072c8t6\stm32f0xx_ll_usb.crf --depend f072c8t6\stm32f0xx_ll_usb.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_pcd.o --omf_browse f072c8t6\stm32f0xx_hal_pcd.crf --depend f072c8t6\stm32f0xx_hal_pcd.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_pcd_ex.o --omf_browse f072c8t6\stm32f0xx_hal_pcd_ex.crf --depend f072c8t6\stm32f0xx_hal_pcd_ex.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_rcc.o --omf_browse f072c8t6\stm32f0xx_hal_rcc.crf --depend f072c8t6\stm32f0xx_hal_rcc.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_rcc_ex.o --omf_browse f072c8t6\stm32f0xx_hal_rcc_ex.crf --depend f072c8t6\stm32f0xx_hal_rcc_ex.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal.o --omf_browse f072c8t6\stm32f0xx_hal.crf --depend f072c8t6\stm32f0xx_hal.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_i2c.o --omf_browse f072c8t6\stm32f0xx_hal_i2c.crf --depend f072c8t6\stm32f0xx_hal_i2c.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_i2c_ex.o --omf_browse f072c8t6\stm32f0xx_hal_i2c_ex.crf --depend f072c8t6\stm32f0xx_hal_i2c_ex.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_gpio.o --omf_browse f072c8t6\stm32f0xx_hal_gpio.crf --depend f072c8t6\stm32f0xx_hal_gpio.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_dma.o --omf_browse f072c8t6\stm32f0xx_hal_dma.crf --depend f072c8t6\stm32f0xx_hal_dma.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_cortex.o --omf_browse f072c8t6\stm32f0xx_hal_cortex.crf --depend f072c8t6\stm32f0xx_hal_cortex.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_pwr.o --omf_browse f072c8t6\stm32f0xx_hal_pwr.crf --depend f072c8t6\stm32f0xx_hal_pwr.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_pwr_ex.o --omf_browse f072c8t6\stm32f0xx_hal_pwr_ex.crf --depend f072c8t6\stm32f0xx_hal_pwr_ex.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_flash.o --omf_browse f072c8t6\stm32f0xx_hal_flash.crf --depend f072c8t6\stm32f0xx_hal_flash.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_flash_ex.o --omf_browse f072c8t6\stm32f0xx_hal_flash_ex.crf --depend f072c8t6\stm32f0xx_hal_flash_ex.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_exti.o --omf_browse f072c8t6\stm32f0xx_hal_exti.crf --depend f072c8t6\stm32f0xx_hal_exti.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_tim.o --omf_browse f072c8t6\stm32f0xx_hal_tim.crf --depend f072c8t6\stm32f0xx_hal_tim.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\stm32f0xx_hal_tim_ex.o --omf_browse f072c8t6\stm32f0xx_hal_tim_ex.crf --depend f072c8t6\stm32f0xx_hal_tim_ex.d)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Core/Src/system_stm32f0xx.c)(0x6374E88A)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\system_stm32f0xx.o --omf_browse f072c8t6\system_stm32f0xx.crf --depend f072c8t6\system_stm32f0xx.d)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c)(0x6374E86B)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usbd_core.o --omf_browse f072c8t6\usbd_core.crf --depend f072c8t6\usbd_core.d)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)
-F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c)(0x6374E86B)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usbd_ctlreq.o --omf_browse f072c8t6\usbd_ctlreq.crf --depend f072c8t6\usbd_ctlreq.d)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c)(0x6374E86B)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usbd_ioreq.o --omf_browse f072c8t6\usbd_ioreq.crf --depend f072c8t6\usbd_ioreq.d)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)
-F (../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c)(0x6374E86B)(--c99 --execute_only -c --cpu Cortex-M0 -g -O2 --apcs=interwork --split_sections -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include-I "E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F072xB -DUSE_HAL_DRIVER -DSTM32F072xB-o f072c8t6\usbd_cdc.o --omf_browse f072c8t6\usbd_cdc.crf --depend f072c8t6\usbd_cdc.d)
-I (../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x6374E86B)
-I (../USB_DEVICE/Target/usbd_conf.h)(0x63788D17)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DB3988)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DB3988)
-I (../Core/Inc/main.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x6374E88A)
-I (../Core/Inc/stm32f0xx_hal_conf.h)(0x63788D1A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x6374E88A)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x6374E88A)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x6374E868)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DB3990)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6374E868)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6374E868)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6374E88A)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DB398E)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x6374E88A)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x6374E88A)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x6374E86B)
-I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x6374E86B)

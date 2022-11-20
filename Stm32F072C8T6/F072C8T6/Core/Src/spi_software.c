@@ -1,6 +1,9 @@
 #include "spi_software.h"
 #include "main.h"
 
+
+extern TIM_HandleTypeDef htim1;
+
 void InitializeSPI()
 {
 	// Initialize the chip select lines as inactive
@@ -15,6 +18,7 @@ void InitializeSPI()
 	// Initialize the data lines as inputs
 	InitIoPinOutput(SDIO1_GPIO_Port, SDIO1_Pin);
 	InitIoPinOutput(SDIO2_GPIO_Port, SDIO2_Pin);
+	InitIoPinOutput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 }
 
 uint8_t MCP3550_Read(uint8_t* adc_data)
@@ -45,15 +49,15 @@ void DAC1220_Reset()
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
 	SPIDelay();
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	//__delay_us(264);
+	delay_ns(600);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
-	SPIDelay();
+	delay_ns(15);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	//__delay_us(570);
+	delay_ns(1500);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
-	SPIDelay();
+	delay_ns(15);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	//__delay_us(903);
+	delay_ns(2100);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
 	SPIDelay();
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_SET);
@@ -64,11 +68,11 @@ void DAC1220_Write2Bytes(const uint8_t address, const uint8_t byte1, const uint8
 {
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
 	SPIDelay();
-	InitIoPinOutput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinOutput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	WriteByteSPI(32+address);
 	WriteByteSPI(byte1);
 	WriteByteSPI(byte2);
-	InitIoPinInput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinInput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_SET);
 	SPIDelay();
 }
@@ -77,12 +81,12 @@ void DAC1220_Write3Bytes(const uint8_t address, const uint8_t byte1, const uint8
 {
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
 	SPIDelay();
-	InitIoPinOutput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinOutput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	WriteByteSPI(64+address);
 	WriteByteSPI(byte1);
 	WriteByteSPI(byte2);
 	WriteByteSPI(byte3);
-	InitIoPinInput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinInput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_SET);
 	SPIDelay();
 }
@@ -91,9 +95,9 @@ void DAC1220_Read2Bytes(const uint8_t address, uint8_t* byte1, uint8_t* byte2)
 {
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
 	SPIDelay();
-	InitIoPinOutput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinOutput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	WriteByteSPI(160+address);
-	InitIoPinInput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinInput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	SPIDelay();
 	*byte1 = ReadByteSPI();
 	*byte2 = ReadByteSPI();
@@ -105,9 +109,9 @@ void DAC1220_Read3Bytes(const uint8_t address, uint8_t* byte1, uint8_t* byte2, u
 {
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
 	SPIDelay();
-	InitIoPinOutput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinOutput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	WriteByteSPI(192+address);
-	InitIoPinInput(SDIO1_GPIO_Port, SDIO1_Pin);
+	InitIoPinInput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 	SPIDelay();
 	*byte1 = ReadByteSPI();
 	*byte2 = ReadByteSPI();
@@ -118,6 +122,7 @@ void DAC1220_Read3Bytes(const uint8_t address, uint8_t* byte1, uint8_t* byte2, u
 
 void DAC1220_Init()
 {
+	uint8_t testData[3]= {0x00,0x00,0x00};
 	DAC1220_Write2Bytes(4, 32, 160); // command register: 20-bit resolution; straight binary
 	DAC1220_Write3Bytes(0, 128, 0, 0); // set midscale output
 }
@@ -139,7 +144,7 @@ void Read2BytesSPI(uint8_t* data1_byte, uint8_t* data2_byte)
 		*data2_byte <<= 1;
 		*data1_byte &= 0xFE;      // clear bit 0
 		*data2_byte &= 0xFE;
-		if(HAL_GPIO_ReadPin(SDIO1_GPIO_Port, SDIO1_Pin))            // is data line high
+		if(HAL_GPIO_ReadPin(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin))            // is data line high
 			*data1_byte |= 0x01;  // set bit 0 to logic 1
 		if(HAL_GPIO_ReadPin(SDIO2_GPIO_Port, SDIO2_Pin))            // is data line high
 			*data2_byte |= 0x01;  // set bit 0 to logic 1
@@ -155,7 +160,7 @@ uint8_t ReadByteSPI()
 		ClockPulse();            // generate a clock pulse
 		data_byte <<= 1;         // shift composed byte by 1
 		data_byte &= 0xFE;       // clear bit 0
-		if(HAL_GPIO_ReadPin(SDIO1_GPIO_Port, SDIO1_Pin))            // is data line high
+		if(HAL_GPIO_ReadPin(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin))            // is data line high
 			data_byte |= 0x01;   // set bit 0 to logic 1
 	} while (--bit_counter);     // repeat until 8 bits have been acquired
 	return data_byte;
@@ -166,7 +171,7 @@ void WriteByteSPI(uint8_t data_byte)
 	uint8_t bit_counter = 8;     // set bit count for byte
 	do
 	{
-		HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, ((data_byte&0x80)?HIGH:LOW));  // output most significant bit
+		HAL_GPIO_WritePin(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin, ((data_byte&0x80)?HIGH:LOW));  // output most significant bit
 		ClockPulse();                           // generate a clock pulse
 		data_byte <<= 1;                        // shift byte to the left
 	} while (--bit_counter);                    // repeat until 8 bits have been transmitted
@@ -183,5 +188,14 @@ void ClockPulse()
 
 void SPIDelay()
 {
-	HAL_Delay(200); // delay of 100 instruction cycles (=17 us at Fosc=48 MHz)
+	delay_ns(100); // delay of 100 instruction cycles (=17 us at Fosc=48 MHz)
 }
+
+void delay_ns(uint16_t delay)
+{
+	__HAL_TIM_SET_COUNTER(&htim1, 0);
+	while( __HAL_TIM_GET_COUNTER(&htim1) < delay);
+}
+
+
+

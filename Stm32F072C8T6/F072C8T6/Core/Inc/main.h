@@ -66,6 +66,8 @@ void Error_Handler(void);
 #define SDIO1_GPIO_Port GPIOA
 #define SDIO2_Pin GPIO_PIN_3
 #define SDIO2_GPIO_Port GPIOA
+#define SDIO_DAC_Pin GPIO_PIN_4
+#define SDIO_DAC_GPIO_Port GPIOA
 #define SCK_Pin GPIO_PIN_5
 #define SCK_GPIO_Port GPIOA
 #define MODE_SW_Pin GPIO_PIN_0

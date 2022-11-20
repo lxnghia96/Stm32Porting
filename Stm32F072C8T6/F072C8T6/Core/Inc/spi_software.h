@@ -26,5 +26,5 @@ uint8_t ReadByteSPI();
 void WriteByteSPI(uint8_t data_byte);
 void ClockPulse();
 void SPIDelay();
-
+void delay_ns(uint16_t delay);
 #endif
