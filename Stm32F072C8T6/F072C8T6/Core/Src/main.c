@@ -43,7 +43,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+static const uint8_t* received_data;
+static uint8_t received_data_length;
+static uint8_t* transmit_data;
+static uint8_t transmit_data_length;
+static uint8_t heflashbuffer[32];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -51,6 +55,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 void InitializeIO();
+void command_read_adc();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -89,17 +94,30 @@ int main(void)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   InitializeIO();
-  uint8_t heflashbuffer[3] = {0x01, 0x02, 0x03};
+//  uint8_t heflashbuffer[3] = {0x01, 0x02, 0x03};
   uint8_t readData[3] = {0x00, 0x00, 0x00};
-  DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]);
+//  DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]);
   HAL_Delay(25);
-  DAC1220_Read3Bytes(8, &readData[0], &readData[1], &readData[2] );
+  command_read_adc();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+//	  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
+//	  HAL_Delay(1);
+//	  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_SET);
+//	  HAL_Delay(1);
+//	  HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, GPIO_PIN_RESET);
+//	  HAL_Delay(1);
+//	  HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, GPIO_PIN_SET);
+//	  HAL_Delay(1);
+//	  HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
+//	  HAL_Delay(1);
+//	  HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
+//	  HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -163,7 +181,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, CS1_Pin|CS2_Pin|SCK_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, CS1_Pin|CS2_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, MODE_SW_Pin|RANGE1_Pin|RANGE2_Pin|RANGE3_Pin
@@ -205,14 +226,29 @@ void InitializeIO()
 	 HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
 	InitializeSPI();
 	HAL_Delay(25); // power-up delay - necessary for DAC1220
-//	DAC1220_Reset();
-//	HAL_Delay(25);
-//	DAC1220_Init();
+	DAC1220_Reset();
+	HAL_Delay(25);
+	DAC1220_Init();
 	// HEFLASH_readBlock(heflashbuffer, 2, FLASH_ROWSIZE); // get dac calibration
-//	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
-//	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
+	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
+	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
 }
 
+void command_read_adc()
+{
+	uint8_t adc_data[6];
+	if(MCP3550_Read(adc_data))
+	{
+		transmit_data_length=6;
+		memcpy(transmit_data, adc_data, transmit_data_length);
+	}
+	else
+	{
+		const uint8_t* reply = "WAIT";
+		strcpy(transmit_data, reply);
+		transmit_data_length = strlen(reply);
+	}
+}
 
 /* USER CODE END 4 */
 
