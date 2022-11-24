@@ -49,15 +49,15 @@ void DAC1220_Reset()
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
 	SPIDelay();
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	delay_ns(600);
+	delay_ns(240);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
-	delay_ns(15);
+	delay_ns(2);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	delay_ns(1500);
+	delay_ns(500);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
-	delay_ns(15);
+	delay_ns(2);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	delay_ns(2100);
+	delay_ns(830);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
 	SPIDelay();
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_SET);
@@ -122,7 +122,7 @@ void DAC1220_Read3Bytes(const uint8_t address, uint8_t* byte1, uint8_t* byte2, u
 
 void DAC1220_Init()
 {
-	uint8_t testData[3]= {0x00,0x00,0x00};
+
 	DAC1220_Write2Bytes(4, 32, 160); // command register: 20-bit resolution; straight binary
 	DAC1220_Write3Bytes(0, 128, 0, 0); // set midscale output
 }
@@ -188,7 +188,7 @@ void ClockPulse()
 
 void SPIDelay()
 {
-	delay_ns(100); // delay of 100 instruction cycles (=17 us at Fosc=48 MHz)
+	delay_ns(1); // delay of 100 instruction cycles (=17 us at Fosc=48 MHz)
 }
 
 void delay_ns(uint16_t delay)

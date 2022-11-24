@@ -92,10 +92,6 @@ int main(void)
 //  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   InitializeIO();
-  DAC1220_Write3Bytes(8, 0x01, 0x02, 0x03);
-  HAL_Delay(25);
-  uint8_t readData[3] = {0x00, 0x00, 0x00};
-  DAC1220_Read3Bytes(8, &readData[1], &readData[2], &readData[3]);
 //  command_read_adc();
 
   /* USER CODE END 2 */
@@ -106,7 +102,7 @@ int main(void)
   {
 
 //	  HAL_GPIO_TogglePin(SCK_GPIO_Port, SCK_Pin);
-//	  delay_ns(1);
+//	  HAL_Delay(1);
 
 //	  HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, GPIO_PIN_RESET);
 //	  HAL_Delay(1);
@@ -277,7 +273,7 @@ void InitializeIO()
 	DAC1220_Reset();
 	HAL_Delay(25);
 	DAC1220_Init();
-//	// HEFLASH_readBlock(heflashbuffer, 2, FLASH_ROWSIZE); // get dac calibration
+//	HEFLASH_readBlock(heflashbuffer, 2, FLASH_ROWSIZE); // get dac calibration
 //	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
 //	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
 }
