@@ -24,6 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "spi_software.h"
+#include "HEFlash.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,6 +34,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define PAGE_0_ADDR ((uint32_t)0x0801E000)	//Page 124
+#define PAGE_1_ADDR ((uint32_t)0x0801E800)	//Page 125
+#define PAGE_2_ADDR ((uint32_t)0x0801F000)	//Page 126
+#define PAGE_3_ADDR ((uint32_t)0x0801F800)	//Page 127
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -64,6 +69,24 @@ void InitializeIO();
   * @brief  The application entry point.
   * @retval int
   */
+
+uint8_t writeData[6] = {0x11,0x22,0x33,0x44,0x55,0x66};
+uint8_t readData[6];
+
+void FLASH_WritePage(uint32_t startPage, uint32_t endPage, uint32_t data32)
+{
+  HAL_FLASH_Unlock();
+	FLASH_EraseInitTypeDef EraseInit;
+	EraseInit.TypeErase = FLASH_TYPEERASE_PAGES;
+	EraseInit.PageAddress = startPage;
+	EraseInit.NbPages = (endPage - startPage)/FLASH_PAGE_SIZE;
+	uint32_t PageError = 0;
+	HAL_FLASHEx_Erase(&EraseInit, &PageError);
+	HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, startPage, data32); //4 byte dau tien
+	//HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, startPage + 4, 0x34567890); // 4byte tiep theo
+  HAL_FLASH_Lock();
+}
+
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -94,8 +117,13 @@ int main(void)
   InitializeIO();
 //  command_read_adc();
 
-  /* USER CODE END 2 */
+  HEFLASH_writeBlock(1, writeData, 6);
+  HEFLASH_readBlock(readData, 1, 6);
 
+
+  /* USER CODE END 2 */
+	HAL_Delay(25);
+//	Flash_Read_String(readData, PAGE_1, 6);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
