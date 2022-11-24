@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "spi_software.h"
 #include "HEFlash.h"
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,10 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define PAGE_0_ADDR ((uint32_t)0x0801E000)	//Page 124
-#define PAGE_1_ADDR ((uint32_t)0x0801E800)	//Page 125
-#define PAGE_2_ADDR ((uint32_t)0x0801F000)	//Page 126
-#define PAGE_3_ADDR ((uint32_t)0x0801F800)	//Page 127
+#define HEFLASH_SIZE  32
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,6 +47,11 @@
 TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
+static const uint8_t* received_data;
+static uint8_t received_data_length;
+static uint8_t* transmit_data;
+static uint8_t transmit_data_length;
+static uint8_t heflashbuffer[HEFLASH_SIZE];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,12 +59,222 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-void InitializeIO();
-//void command_read_adc();
+
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void InitializeIO()
+{
+	HAL_TIM_Base_Start(&htim1);
+	HAL_GPIO_WritePin(MODE_SW_GPIO_Port, MODE_SW_Pin, GPIO_PIN_RESET); // initialize mode to potentiostatic
+	HAL_GPIO_WritePin(CELL_ON_GPIO_Port, CELL_ON_Pin, GPIO_PIN_RESET);// initialize cell to off position
+	HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_SET); // initialize range to range 1
+	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+	InitializeSPI();
+	HAL_Delay(25); // power-up delay - necessary for DAC1220
+	DAC1220_Reset();
+	HAL_Delay(25);
+	DAC1220_Init();
+	HEFLASH_readBlock(heflashbuffer, 2, HEFLASH_SIZE); // get dac calibration
+	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
+	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
+}
+
+
+void command_unknown()
+{
+	const uint8_t* reply = "?";
+    strcpy(transmit_data, reply);
+    transmit_data_length = strlen(reply);
+}
+
+void send_OK()
+{
+	const uint8_t* reply = "OK";
+    strcpy(transmit_data, reply);
+    transmit_data_length = strlen(reply);
+}
+
+
+void command_cell_on()
+{
+	HAL_GPIO_WritePin(CELL_ON_GPIO_Port, CELL_ON_Pin, GPIO_PIN_SET);
+	send_OK();
+}
+
+void command_cell_off()
+{
+	HAL_GPIO_WritePin(CELL_ON_GPIO_Port, CELL_ON_Pin, GPIO_PIN_RESET);
+	send_OK();
+}
+
+void command_mode_potentiostatic()
+{
+	HAL_GPIO_WritePin(MODE_SW_GPIO_Port, MODE_SW_Pin, GPIO_PIN_RESET);
+	send_OK();
+}
+
+void command_mode_galvanostatic()
+{
+	HAL_GPIO_WritePin(MODE_SW_GPIO_Port, MODE_SW_Pin, GPIO_PIN_SET);
+	send_OK();
+}
+
+void command_range1()
+{
+    HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_SET);
+    HAL_Delay(10); // make the new relay setting before breaking the old one
+    HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE3_GPIO_Port, RANGE3_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_RESET);
+	send_OK();
+}
+
+void command_range2()
+{
+    HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_SET);
+    __delay_ms(10); // make the new relay setting before breaking the old one
+    HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE3_GPIO_Port, RANGE3_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_RESET);
+	send_OK();
+}
+
+void command_range3()
+{
+    HAL_GPIO_WritePin(RANGE3_GPIO_Port, RANGE3_Pin, GPIO_PIN_SET);
+    HAL_Delay(10); // make the new relay setting before breaking the old one
+    HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_RESET);
+	  send_OK();
+}
+
+void command_range4()
+{
+    HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_SET);
+    HAL_Delay(10); // make the new relay setting before breaking the old one
+    HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(RANGE3_GPIO_Port, RANGE3_Pin, GPIO_PIN_RESET);
+	send_OK();
+}
+
+void command_set_dac(const uint8_t* dac_data)
+{
+	DAC1220_Write3Bytes(0, dac_data[0], dac_data[1], dac_data[2]);
+	send_OK();
+}
+
+void command_calibrate_dac()
+{
+	DAC1220_SelfCal();
+	HAL_Delay(500); // wait until calibration is finished
+	uint8_t data[6];
+	DAC1220_Read3Bytes(8, data, data+1, data+2); // get calibration data
+	DAC1220_Read3Bytes(12, data+3, data+4, data+5);
+	HEFLASH_writeBlock(2, data, 6); // save calibration data to HEFLASH
+	send_OK();
+}
+
+void command_read_adc()
+{
+	uint8_t adc_data[6];
+	if(MCP3550_Read(adc_data))
+	{
+		transmit_data_length=6;
+		memcpy(transmit_data, adc_data, transmit_data_length);
+	}
+	else
+	{
+		const uint8_t* reply = "WAIT";
+		strcpy(transmit_data, reply);
+		transmit_data_length = strlen(reply);
+	}
+}
+
+void command_read_offset()
+{
+	HEFLASH_readBlock(heflashbuffer, 1, HEFLASH_SIZE);
+	transmit_data_length=6;
+	memcpy(transmit_data, heflashbuffer, transmit_data_length);
+}
+
+void command_save_offset(const uint8_t* offset_data)
+{
+	HEFLASH_writeBlock(1, offset_data, 6);
+	send_OK();
+}
+
+void command_read_shuntcalibration()
+{
+	HEFLASH_readBlock(heflashbuffer, 3, HEFLASH_SIZE);
+	transmit_data_length=8;
+	memcpy(transmit_data, heflashbuffer, transmit_data_length);
+}
+
+void command_save_shuntcalibration(const uint8_t* shuntcalibration_data)
+{
+	HEFLASH_writeBlock(3, shuntcalibration_data, 8);
+	send_OK();
+}
+
+void command_read_dac_cal()
+{
+	HEFLASH_readBlock(heflashbuffer, 2, HEFLASH_SIZE);
+	transmit_data_length=6;
+	memcpy(transmit_data, heflashbuffer, transmit_data_length);
+}
+
+void command_set_dac_cal(const uint8_t* dac_cal_data)
+{
+	HEFLASH_writeBlock(2, dac_cal_data, 6);
+	DAC1220_Write3Bytes(8, dac_cal_data[0], dac_cal_data[1], dac_cal_data[2]);
+	DAC1220_Write3Bytes(12, dac_cal_data[3], dac_cal_data[4], dac_cal_data[5]);
+	send_OK();
+}
+
+void interpret_command() {
+	if (received_data_length == 7 && strncmp(received_data,"CELL ON",7) == 0)
+        command_cell_on();
+    else if (received_data_length == 8 && strncmp(received_data,"CELL OFF",8) == 0)
+        command_cell_off();
+    else if (received_data_length == 14 && strncmp(received_data,"POTENTIOSTATIC",14) == 0)
+        command_mode_potentiostatic();
+    else if (received_data_length == 13 && strncmp(received_data,"GALVANOSTATIC",13) == 0)
+        command_mode_galvanostatic();
+    else if (received_data_length == 7 && strncmp(received_data,"RANGE 1",7) == 0)
+        command_range1();
+    else if (received_data_length == 7 && strncmp(received_data,"RANGE 2",7) == 0)
+        command_range2();
+    else if (received_data_length == 7 && strncmp(received_data,"RANGE 3",7) == 0)
+        command_range3();
+    else if (received_data_length == 7 && strncmp(received_data,"RANGE 4",7) == 0)
+        command_range4();
+    else if (received_data_length == 10 && strncmp(received_data,"DACSET ",7) == 0)
+	command_set_dac(received_data+7);
+    else if (received_data_length == 6 && strncmp(received_data,"DACCAL",6) == 0)
+	command_calibrate_dac();
+    else if (received_data_length == 7 && strncmp(received_data,"ADCREAD",7) == 0)
+	command_read_adc();
+    else if (received_data_length == 10 && strncmp(received_data,"OFFSETREAD",10) == 0)
+	command_read_offset();
+    else if (received_data_length == 17 && strncmp(received_data,"OFFSETSAVE ",11) == 0)
+	command_save_offset(received_data+11);
+    else if (received_data_length == 9 && strncmp(received_data,"DACCALGET",9) == 0)
+	command_read_dac_cal();
+    else if (received_data_length == 16 && strncmp(received_data,"DACCALSET ",10) == 0)
+	command_set_dac_cal(received_data+10);
+    else if (received_data_length == 12 && strncmp(received_data,"SHUNTCALREAD",12) == 0)
+	command_read_shuntcalibration();
+    else if (received_data_length == 21 && strncmp(received_data,"SHUNTCALSAVE ",13) == 0)
+	command_save_shuntcalibration(received_data+13);
+    else
+        command_unknown();
+}
 
 /* USER CODE END 0 */
 
@@ -69,23 +282,6 @@ void InitializeIO();
   * @brief  The application entry point.
   * @retval int
   */
-
-uint8_t writeData[6] = {0x11,0x22,0x33,0x44,0x55,0x66};
-uint8_t readData[6];
-
-void FLASH_WritePage(uint32_t startPage, uint32_t endPage, uint32_t data32)
-{
-  HAL_FLASH_Unlock();
-	FLASH_EraseInitTypeDef EraseInit;
-	EraseInit.TypeErase = FLASH_TYPEERASE_PAGES;
-	EraseInit.PageAddress = startPage;
-	EraseInit.NbPages = (endPage - startPage)/FLASH_PAGE_SIZE;
-	uint32_t PageError = 0;
-	HAL_FLASHEx_Erase(&EraseInit, &PageError);
-	HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, startPage, data32); //4 byte dau tien
-	//HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, startPage + 4, 0x34567890); // 4byte tiep theo
-  HAL_FLASH_Lock();
-}
 
 int main(void)
 {
@@ -115,31 +311,14 @@ int main(void)
 //  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   InitializeIO();
-//  command_read_adc();
-
-  HEFLASH_writeBlock(1, writeData, 6);
-  HEFLASH_readBlock(readData, 1, 6);
-
 
   /* USER CODE END 2 */
 	HAL_Delay(25);
-//	Flash_Read_String(readData, PAGE_1, 6);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 
-//	  HAL_GPIO_TogglePin(SCK_GPIO_Port, SCK_Pin);
-//	  HAL_Delay(1);
-
-//	  HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, GPIO_PIN_RESET);
-//	  HAL_Delay(1);
-//	  HAL_GPIO_WritePin(SDIO1_GPIO_Port, SDIO1_Pin, GPIO_PIN_SET);
-//	  HAL_Delay(1);
-//	  HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
-//	  HAL_Delay(1);
-//	  HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-//	  HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -287,24 +466,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-void InitializeIO()
-{
-	HAL_TIM_Base_Start(&htim1);
-	HAL_GPIO_WritePin(MODE_SW_GPIO_Port, MODE_SW_Pin, GPIO_PIN_RESET); // initialize mode to potentiostatic
-	HAL_GPIO_WritePin(CELL_ON_GPIO_Port, CELL_ON_Pin, GPIO_PIN_RESET);// initialize cell to off position
-	HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_SET); // initialize range to range 1
-	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
-	InitializeSPI();
-	HAL_Delay(25); // power-up delay - necessary for DAC1220
-	DAC1220_Reset();
-	HAL_Delay(25);
-	DAC1220_Init();
-//	HEFLASH_readBlock(heflashbuffer, 2, FLASH_ROWSIZE); // get dac calibration
-//	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
-//	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
-}
 
 /* USER CODE END 4 */
 
