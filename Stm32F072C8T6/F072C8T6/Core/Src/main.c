@@ -72,7 +72,8 @@ void InitializeIO()
 	HAL_GPIO_WritePin(CELL_ON_GPIO_Port, CELL_ON_Pin, GPIO_PIN_RESET);// initialize cell to off position
 	HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_SET); // initialize range to range 1
 	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(RANGE3_GPIO_Port, RANGE3_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_RESET);
 	InitializeSPI();
 	HAL_Delay(25); // power-up delay - necessary for DAC1220
 	DAC1220_Reset();
