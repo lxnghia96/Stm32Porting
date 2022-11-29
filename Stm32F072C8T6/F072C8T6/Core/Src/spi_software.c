@@ -16,9 +16,6 @@ void InitializeSPI()
 	InitIoPinOutput(SCK_GPIO_Port, SCK_Pin);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
 	// Initialize the data lines as inputs
-	InitIoPinOutput(SDIO1_GPIO_Port, SDIO1_Pin);
-	InitIoPinOutput(SDIO2_GPIO_Port, SDIO2_Pin);
-	InitIoPinOutput(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin);
 }
 
 uint8_t MCP3550_Read(uint8_t* adc_data)
@@ -49,15 +46,21 @@ void DAC1220_Reset()
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_RESET);
 	SPIDelay();
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	delay_ns(240);
+	delay_ns(4000);
+	delay_ns(4500);
+	delay_ns(4500);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
-	delay_ns(2);
+	delay_ns(700);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	delay_ns(500);
+	delay_ns(5000);
+	delay_ns(10000);
+	delay_ns(10000);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
-	delay_ns(2);
+	delay_ns(700);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_SET);
-	delay_ns(830);
+	delay_ns(20000);
+	delay_ns(20000);
+	delay_ns(3000);
 	HAL_GPIO_WritePin(SCK_GPIO_Port, SCK_Pin, GPIO_PIN_RESET);
 	SPIDelay();
 	HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, GPIO_PIN_SET);
@@ -139,12 +142,12 @@ void Read2BytesSPI(uint8_t* data1_byte, uint8_t* data2_byte)
 	uint8_t bit_counter = 8;     // set bit count for byte
 	do
 	{
-		ClockPulse();            // generate a clock pulse
+		ClockPulse();			  // generate a clock pulse
 		*data1_byte <<= 1;        // shift composed byte by 1
 		*data2_byte <<= 1;
 		*data1_byte &= 0xFE;      // clear bit 0
 		*data2_byte &= 0xFE;
-		if(HAL_GPIO_ReadPin(SDIO_DAC_GPIO_Port, SDIO_DAC_Pin))            // is data line high
+		if(HAL_GPIO_ReadPin(SDIO1_GPIO_Port, SDIO1_Pin))            // is data line high
 			*data1_byte |= 0x01;  // set bit 0 to logic 1
 		if(HAL_GPIO_ReadPin(SDIO2_GPIO_Port, SDIO2_Pin))            // is data line high
 			*data2_byte |= 0x01;  // set bit 0 to logic 1
@@ -188,7 +191,7 @@ void ClockPulse()
 
 void SPIDelay()
 {
-	delay_ns(1); // delay of 100 instruction cycles (=17 us at Fosc=48 MHz)
+	delay_ns(700); // delay of 100 instruction cycles (=17 us at Fosc=48 MHz)
 }
 
 void delay_ns(uint16_t delay)

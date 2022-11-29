@@ -8,12 +8,13 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include USB_DEVICE/Target/subdir.mk
+-include USB_DEVICE/App/subdir.mk
 -include Middlewares/ST/STM32_USB_Device_Library/Core/Src/subdir.mk
 -include Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/subdir.mk
 -include Drivers/STM32F0xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
--include Core/Inc/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -31,34 +32,34 @@ endif
 
 -include ../makefile.defs
 
-BUILD_ARTIFACT_NAME := F072C8T6
+BUILD_ARTIFACT_NAME := LibUsb
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX := 
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-F072C8T6.elf \
+LibUsb.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-F072C8T6.list \
+LibUsb.list \
 
 OBJCOPY_BIN += \
-F072C8T6.bin \
+LibUsb.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: F072C8T6.elf secondary-outputs
+main-build: LibUsb.elf secondary-outputs
 
 # Tool invocations
-F072C8T6.elf: $(OBJS) $(USER_OBJS) E:\F\Du_an\Project\Porting\ Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\STM32F072C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "F072C8T6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"E:\F\Du_an\Project\Porting Code\Stm32F072C8T6\Stm32F072C8T6\F072C8T6\STM32F072C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F072C8T6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LibUsb.elf: $(OBJS) $(USER_OBJS) E:\F\Du_an\Project\Porting\ Code\LIB_USB\USB\LibUsb\STM32F072C8TX_FLASH.ld
+	arm-none-eabi-gcc -o "LibUsb.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"E:\F\Du_an\Project\Porting Code\LIB_USB\USB\LibUsb\STM32F072C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LibUsb.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -67,13 +68,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-F072C8T6.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "F072C8T6.list"
+LibUsb.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "LibUsb.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-F072C8T6.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "F072C8T6.bin"
+LibUsb.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "LibUsb.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

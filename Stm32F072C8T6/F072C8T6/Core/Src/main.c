@@ -9,10 +9,10 @@
   * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -26,6 +26,7 @@
 #include "spi_software.h"
 #include "HEFlash.h"
 #include "string.h"
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,9 +50,12 @@ TIM_HandleTypeDef htim1;
 /* USER CODE BEGIN PV */
 static const uint8_t* received_data;
 static uint8_t received_data_length;
-static uint8_t* transmit_data;
+static uint8_t transmit_data[128];
 static uint8_t transmit_data_length;
 static uint8_t heflashbuffer[HEFLASH_SIZE];
+extern uint8_t isRecvData;
+extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
+extern uint8_t recvDataLen;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -59,7 +63,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-
 
 /* USER CODE END PFP */
 
@@ -73,7 +76,7 @@ void InitializeIO()
 	HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_SET); // initialize range to range 1
 	HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(RANGE3_GPIO_Port, RANGE3_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_RESET);
 	InitializeSPI();
 	HAL_Delay(25); // power-up delay - necessary for DAC1220
 	DAC1220_Reset();
@@ -137,7 +140,7 @@ void command_range1()
 void command_range2()
 {
     HAL_GPIO_WritePin(RANGE2_GPIO_Port, RANGE2_Pin, GPIO_PIN_SET);
-    __delay_ms(10); // make the new relay setting before breaking the old one
+    HAL_Delay(10); // make the new relay setting before breaking the old one
     HAL_GPIO_WritePin(RANGE1_GPIO_Port, RANGE1_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(RANGE3_GPIO_Port, RANGE3_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(RANGE4_GPIO_Port, RANGE4_Pin, GPIO_PIN_RESET);
@@ -226,7 +229,7 @@ void command_save_shuntcalibration(const uint8_t* shuntcalibration_data)
 void command_read_dac_cal()
 {
 	HEFLASH_readBlock(heflashbuffer, 2, HEFLASH_SIZE);
-	transmit_data_length=6;
+	transmit_data_length = 6;
 	memcpy(transmit_data, heflashbuffer, transmit_data_length);
 }
 
@@ -283,7 +286,6 @@ void interpret_command() {
   * @brief  The application entry point.
   * @retval int
   */
-
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -308,19 +310,34 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_USB_DEVICE_Init();
   MX_TIM1_Init();
-//  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   InitializeIO();
 
   /* USER CODE END 2 */
-	HAL_Delay(25);
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
     /* USER CODE END WHILE */
+	  /* Receive data */
+	  if( 1U == isRecvData)
+	  {
+		 /* clear flag */
+		  isRecvData = 0U;
+
+		  /* get memory length of received data */
+		  received_data_length = recvDataLen;
+
+		  /* get memory location of received data*/
+		  received_data = UserRxBufferFS;
+
+		  interpret_command();
+
+		  CDC_Transmit_FS(transmit_data, transmit_data_length);
+	  }
 
     /* USER CODE BEGIN 3 */
   }
@@ -340,13 +357,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48;
   RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL2;
-  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -355,7 +368,7 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI48;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
 
@@ -452,7 +465,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pins : SDIO1_Pin SDIO2_Pin */
   GPIO_InitStruct.Pin = SDIO1_Pin|SDIO2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : MODE_SW_Pin RANGE1_Pin RANGE2_Pin RANGE3_Pin
