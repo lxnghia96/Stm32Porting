@@ -47,6 +47,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 LibUsb.list \
 
+OBJCOPY_HEX += \
+LibUsb.hex \
+
 OBJCOPY_BIN += \
 LibUsb.bin \
 
@@ -58,8 +61,8 @@ all: main-build
 main-build: LibUsb.elf secondary-outputs
 
 # Tool invocations
-LibUsb.elf: $(OBJS) $(USER_OBJS) E:\F\Du_an\Project\Porting\ Code\LIB_USB\USB\LibUsb\STM32F072C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "LibUsb.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"E:\F\Du_an\Project\Porting Code\LIB_USB\USB\LibUsb\STM32F072C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LibUsb.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LibUsb.elf: $(OBJS) $(USER_OBJS) E:\F\Du_an\Project\Porting\ Code\main\Stm32Porting\Stm32F072C8T6\F072C8T6\STM32F072C8TX_FLASH.ld
+	arm-none-eabi-gcc -o "LibUsb.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"E:\F\Du_an\Project\Porting Code\main\Stm32Porting\Stm32F072C8T6\F072C8T6\STM32F072C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LibUsb.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -73,6 +76,11 @@ LibUsb.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+LibUsb.hex: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "LibUsb.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 LibUsb.bin: $(EXECUTABLES)
 	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "LibUsb.bin"
 	@echo 'Finished building: $@'
@@ -83,7 +91,7 @@ clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
