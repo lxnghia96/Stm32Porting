@@ -70,8 +70,14 @@ void Error_Handler(void);
 #define SDIO_DAC_GPIO_Port GPIOA
 #define SCK_Pin GPIO_PIN_5
 #define SCK_GPIO_Port GPIOA
+#define STM_ADC1_INP_Pin GPIO_PIN_6
+#define STM_ADC1_INP_GPIO_Port GPIOA
+#define STM_ADC2_INP_Pin GPIO_PIN_7
+#define STM_ADC2_INP_GPIO_Port GPIOA
 #define MODE_SW_Pin GPIO_PIN_0
 #define MODE_SW_GPIO_Port GPIOB
+#define I_E_SWITCH_Pin GPIO_PIN_1
+#define I_E_SWITCH_GPIO_Port GPIOB
 #define RANGE1_Pin GPIO_PIN_2
 #define RANGE1_GPIO_Port GPIOB
 #define RANGE2_Pin GPIO_PIN_10
