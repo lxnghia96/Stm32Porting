@@ -37,10 +37,13 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define HEFLASH_SIZE  32
+#define ADC_INTERNAL  true
+#define V_Ref     (float) 2.5
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+
 
 /* USER CODE END PM */
 
@@ -209,6 +212,19 @@ void command_range4()
 	send_OK();
 }
 
+void command_set_dac_Internal(const uint8_t* dac_data)
+{ 
+	uint32_t code = 0x00;
+	float dacOut;
+	code |= dac_data[0]<<12;
+	code |= dac_data[1]<<4;
+	code |= dac_data[2]>>4;
+	dacOut = (2*V_Ref*code);
+	dacOut = dacOut/pow(2,20);
+	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)(dacOut));
+	send_OK();
+}
+
 void command_set_dac(const uint8_t* dac_data)
 {
 	DAC1220_Write3Bytes(0, dac_data[0], dac_data[1], dac_data[2]);
@@ -259,7 +275,6 @@ void command_read_offset()
 void command_save_offset(const uint8_t* offset_data)
 {
 	HEFLASH_writeBlock(1, offset_data, 6);
-	send_OK();
 }
 
 void command_read_shuntcalibration()
@@ -309,12 +324,19 @@ void interpret_command() {
     else if (received_data_length == 7 && strncmp(received_data,"RANGE 4",7) == 0)
         command_range4();
     else if (received_data_length == 10 && strncmp(received_data,"DACSET ",7) == 0)
-    	command_set_dac(received_data+7);
+#if ADC_INTERNAL
+    	command_set_dac_Internal(received_data+7);
+#else
+      command_set_dac(received_data+7);
+#endif
     else if (received_data_length == 6 && strncmp(received_data,"DACCAL",6) == 0)
     	command_calibrate_dac();
     else if (received_data_length == 7 && strncmp(received_data,"ADCREAD",7) == 0)
-    	command_read_adc();
-//    	command_read_adc_Internal();
+#if ADC_INTERNAL
+    	command_read_adc_Internal();
+#else
+      command_read_adc();
+#endif
     else if (received_data_length == 10 && strncmp(received_data,"OFFSETREAD",10) == 0)
     	command_read_offset();
     else if (received_data_length == 17 && strncmp(received_data,"OFFSETSAVE ",11) == 0)
@@ -391,17 +413,16 @@ void updateAdcInternal(void)
       }
       else
       {
-
       }
   }
 }
 
 void isActiveAdcDacInteral(void)
 {
+  MX_DAC_Init();
   HAL_GPIO_WritePin(I_E_SWITCH_GPIO_Port, I_E_SWITCH_Pin, GPIO_PIN_SET);
   isActiveAdcInternal = true;
-  MX_DAC_Init();
-
+  HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
 }
 /* USER CODE END 0 */
 
@@ -440,9 +461,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   InitializeIO();
 
-
+#if ADC_INTERNAL
   isActiveAdcDacInteral();
-
+#endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
