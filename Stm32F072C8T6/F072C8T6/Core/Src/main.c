@@ -50,6 +50,17 @@ ADC_HandleTypeDef hadc;
 TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
+
+typedef enum Adc_Interal{
+	V_MEASURE = 0U,
+	I_MEASURE,
+	WAIT_MEASURE
+};
+
+uint8_t adc_Internal[6];
+enum Adc_Interal adcConvert = WAIT_MEASURE;
+bool isActiveAdcInternal = false;
+volatile bool isUpdate = true;
 static const uint8_t* received_data;
 static uint8_t received_data_length;
 static uint8_t transmit_data[128];
@@ -58,7 +69,8 @@ static uint8_t heflashbuffer[HEFLASH_SIZE];
 extern uint8_t isRecvData;
 extern uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 extern uint8_t recvDataLen;
-volatile uint16_t adc_value = 0U;
+volatile uint32_t adc_value = 0U;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -72,6 +84,30 @@ static void MX_ADC_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void Adc_read_V_Measure(void)
+{
+  ADC_ChannelConfTypeDef sConfig = {0};
+  sConfig.Channel = ADC_CHANNEL_6;
+  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+void Adc_read_I_Measure(void)
+{
+  ADC_ChannelConfTypeDef sConfig = {0};
+  sConfig.Channel = ADC_CHANNEL_7;
+  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
 void InitializeIO()
 {
 	HAL_TIM_Base_Start(&htim1);
@@ -90,7 +126,6 @@ void InitializeIO()
 	DAC1220_Write3Bytes(8, heflashbuffer[0], heflashbuffer[1], heflashbuffer[2]); // apply dac calibration
 	DAC1220_Write3Bytes(12, heflashbuffer[3], heflashbuffer[4], heflashbuffer[5]);
 }
-
 
 void command_unknown()
 {
@@ -188,6 +223,13 @@ void command_calibrate_dac()
 	send_OK();
 }
 
+void command_read_adc_Internal()
+{
+  transmit_data_length = 6;
+  memcpy(transmit_data, adc_Internal, transmit_data_length);
+}
+
+
 void command_read_adc()
 {
 	uint8_t adc_data[6];
@@ -245,6 +287,7 @@ void command_set_dac_cal(const uint8_t* dac_cal_data)
 	send_OK();
 }
 
+
 void interpret_command() {
 	if (received_data_length == 7 && strncmp(received_data,"CELL ON",7) == 0)
         command_cell_on();
@@ -267,7 +310,8 @@ void interpret_command() {
     else if (received_data_length == 6 && strncmp(received_data,"DACCAL",6) == 0)
 	command_calibrate_dac();
     else if (received_data_length == 7 && strncmp(received_data,"ADCREAD",7) == 0)
-	command_read_adc();
+//    command_read_adc();
+    command_read_adc_Internal();
     else if (received_data_length == 10 && strncmp(received_data,"OFFSETREAD",10) == 0)
 	command_read_offset();
     else if (received_data_length == 17 && strncmp(received_data,"OFFSETSAVE ",11) == 0)
@@ -285,11 +329,76 @@ void interpret_command() {
 }
 
 
+
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
 	adc_value = HAL_ADC_GetValue(hadc);
+	adc_value = adc_value*2097152/4096;
+  if(adcConvert == V_MEASURE)
+  {
+    /* update three byte 0 1 2*/
+    adc_Internal[0] =	(uint8_t) ((adc_value>>16) & 0xFF);
+    adc_Internal[1] =	(uint8_t) ((adc_value>>8) & 0xFF);
+    adc_Internal[2] =	(uint8_t) ((adc_value>>0) & 0xFF);
+  }
+  else if(adcConvert == I_MEASURE)
+  {
+    /* update three byte 3 4 5*/
+	 adc_Internal[3] =	(uint8_t) ((adc_value>>16) & 0xFF);
+	 adc_Internal[4] =	(uint8_t) ((adc_value>>8) & 0xFF);
+	 adc_Internal[5] =	(uint8_t) ((adc_value>>0) & 0xFF);
+  }
+  isUpdate = true;
 }
 
+
+void updateAdcInternal(void)
+{ 
+  static uint8_t adcProcess = 0;
+
+  if(isActiveAdcInternal == true)
+  {
+      if(adcProcess == 0)
+      {
+        adcConvert = V_MEASURE;
+        adcProcess = 1;
+        isUpdate = false;
+        Adc_read_V_Measure();
+        HAL_ADC_Start_IT(&hadc);
+      }
+      else if(adcProcess == 1)
+      {
+        if(isUpdate == true)
+        {
+          HAL_ADC_Stop_IT(&hadc);
+          adcConvert = I_MEASURE;
+          adcProcess = 2;
+          isUpdate = false;
+          Adc_read_I_Measure();
+          HAL_ADC_Start_IT(&hadc);
+        }
+      }
+      else if(adcProcess == 2)
+      {
+        if(isUpdate == true)
+        {
+          adcProcess = 0;
+          HAL_ADC_Stop_IT(&hadc);
+        }
+      }
+      else
+      {
+
+      }
+  }
+}
+
+void isActiveAdcDacInteral(void)
+{
+  HAL_GPIO_WritePin(I_E_SWITCH_GPIO_Port, I_E_SWITCH_Pin, GPIO_PIN_SET);
+  isActiveAdcInternal = true;
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -326,8 +435,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   InitializeIO();
 
-  HAL_ADC_Start_IT(&hadc);
-  HAL_GPIO_WritePin(I_E_SWITCH_GPIO_Port, I_E_SWITCH_Pin, GPIO_PIN_SET);
+
+  isActiveAdcDacInteral();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -350,7 +460,11 @@ int main(void)
 
 		  CDC_Transmit_FS(transmit_data, transmit_data_length);
 	  }
+
+	  updateAdcInternal();
+
     /* USER CODE END WHILE */
+    
 
     /* USER CODE BEGIN 3 */
   }
@@ -412,7 +526,7 @@ static void MX_ADC_Init(void)
 
   /* USER CODE END ADC_Init 0 */
 
-  ADC_ChannelConfTypeDef sConfig = {0};
+  
 
   /* USER CODE BEGIN ADC_Init 1 */
 
@@ -427,7 +541,7 @@ static void MX_ADC_Init(void)
   hadc.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc.Init.LowPowerAutoWait = DISABLE;
   hadc.Init.LowPowerAutoPowerOff = DISABLE;
-  hadc.Init.ContinuousConvMode = ENABLE;
+  hadc.Init.ContinuousConvMode = DISABLE;
   hadc.Init.DiscontinuousConvMode = DISABLE;
   hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
@@ -439,20 +553,20 @@ static void MX_ADC_Init(void)
   }
   /** Configure for the selected ADC regular channel to be converted.
   */
-  sConfig.Channel = ADC_CHANNEL_6;
-  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-  sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
-  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure for the selected ADC regular channel to be converted.
-  */
-  sConfig.Channel = ADC_CHANNEL_7;
-  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
+  // sConfig.Channel = ADC_CHANNEL_6;
+  // sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  // sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
+  // if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  // {
+  //   Error_Handler();
+  // }
+  // /** Configure for the selected ADC regular channel to be converted.
+  // */
+  // sConfig.Channel = ADC_CHANNEL_7;
+  // if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  // {
+  //   Error_Handler();
+  // }
   /* USER CODE BEGIN ADC_Init 2 */
 
   /* USER CODE END ADC_Init 2 */
