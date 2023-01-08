@@ -47,6 +47,8 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
 
+DAC_HandleTypeDef hdac;
+
 TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
@@ -78,6 +80,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_ADC_Init(void);
+static void MX_DAC_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -306,24 +309,24 @@ void interpret_command() {
     else if (received_data_length == 7 && strncmp(received_data,"RANGE 4",7) == 0)
         command_range4();
     else if (received_data_length == 10 && strncmp(received_data,"DACSET ",7) == 0)
-	command_set_dac(received_data+7);
+    	command_set_dac(received_data+7);
     else if (received_data_length == 6 && strncmp(received_data,"DACCAL",6) == 0)
-	command_calibrate_dac();
+    	command_calibrate_dac();
     else if (received_data_length == 7 && strncmp(received_data,"ADCREAD",7) == 0)
-//    command_read_adc();
-    command_read_adc_Internal();
+    	command_read_adc();
+//    	command_read_adc_Internal();
     else if (received_data_length == 10 && strncmp(received_data,"OFFSETREAD",10) == 0)
-	command_read_offset();
+    	command_read_offset();
     else if (received_data_length == 17 && strncmp(received_data,"OFFSETSAVE ",11) == 0)
-	command_save_offset(received_data+11);
+    	command_save_offset(received_data+11);
     else if (received_data_length == 9 && strncmp(received_data,"DACCALGET",9) == 0)
-	command_read_dac_cal();
+    	command_read_dac_cal();
     else if (received_data_length == 16 && strncmp(received_data,"DACCALSET ",10) == 0)
-	command_set_dac_cal(received_data+10);
+    	command_set_dac_cal(received_data+10);
     else if (received_data_length == 12 && strncmp(received_data,"SHUNTCALREAD",12) == 0)
-	command_read_shuntcalibration();
+    	command_read_shuntcalibration();
     else if (received_data_length == 21 && strncmp(received_data,"SHUNTCALSAVE ",13) == 0)
-	command_save_shuntcalibration(received_data+13);
+    	command_save_shuntcalibration(received_data+13);
     else
         command_unknown();
 }
@@ -397,6 +400,7 @@ void isActiveAdcDacInteral(void)
 {
   HAL_GPIO_WritePin(I_E_SWITCH_GPIO_Port, I_E_SWITCH_Pin, GPIO_PIN_SET);
   isActiveAdcInternal = true;
+  MX_DAC_Init();
 
 }
 /* USER CODE END 0 */
@@ -432,6 +436,7 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_TIM1_Init();
   MX_ADC_Init();
+  
   /* USER CODE BEGIN 2 */
   InitializeIO();
 
@@ -526,7 +531,7 @@ static void MX_ADC_Init(void)
 
   /* USER CODE END ADC_Init 0 */
 
-  
+  ADC_ChannelConfTypeDef sConfig = {0};
 
   /* USER CODE BEGIN ADC_Init 1 */
 
@@ -570,6 +575,44 @@ static void MX_ADC_Init(void)
   /* USER CODE BEGIN ADC_Init 2 */
 
   /* USER CODE END ADC_Init 2 */
+
+}
+
+/**
+  * @brief DAC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_DAC_Init(void)
+{
+
+  /* USER CODE BEGIN DAC_Init 0 */
+
+  /* USER CODE END DAC_Init 0 */
+
+  DAC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN DAC_Init 1 */
+
+  /* USER CODE END DAC_Init 1 */
+  /** DAC Initialization
+  */
+  hdac.Instance = DAC;
+  if (HAL_DAC_Init(&hdac) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** DAC channel OUT1 config
+  */
+  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+  sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
+  if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN DAC_Init 2 */
+
+  /* USER CODE END DAC_Init 2 */
 
 }
 
