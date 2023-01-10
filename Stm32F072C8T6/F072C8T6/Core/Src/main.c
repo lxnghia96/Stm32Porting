@@ -37,7 +37,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define HEFLASH_SIZE  32
-#define ADC_INTERNAL  true
+#define ADC_INTERNAL  false
 #define V_Ref     (float) 2.5
 /* USER CODE END PD */
 
@@ -347,7 +347,7 @@ void interpret_command() {
     	command_set_dac_cal(received_data+10);
     else if (received_data_length == 12 && strncmp(received_data,"SHUNTCALREAD",12) == 0)
     	command_read_shuntcalibration();
-    else if (received_data_length == 21 && strncmp(received_data,"SHUNTCALSAVE ",13) == 0)
+    else if (received_data_length == 19 && strncmp(received_data,"SHUNTCALSAVE ",13) == 0)
     	command_save_shuntcalibration(received_data+13);
     else
         command_unknown();
